@@ -42,7 +42,7 @@
 <body>
     <form id="myForm">
         <div id="custom-checkbox">
-            <input type="hidden" id="checkbox1" name="checkbox1">
+            <input type="checkbox" id="checkbox1" name="checkbox1">
             <div for="checkbox1" class="checkbox-style" id="check1"></div>
             Checkbox 1
         </div>
@@ -51,6 +51,13 @@
     </form>
 
     <script>
+
+document.querySelector("#check1").addEventListener('click', function(){
+
+    document.querySelector("#checkbox1").checked = true;
+
+});
+
         // JavaScript for functionality (remains the same)
         document.getElementById('myForm').addEventListener('submit', function (event) {
             event.preventDefault(); // Prevents the default form submission
@@ -66,7 +73,8 @@
         });
     </script>
 
-    <script>
+
+    <!-- <script>
         function nativeToCustom(node) {
             if (node.tagName === 'INPUT') {
                 return document.querySelector("#custom-checkbox");
@@ -75,7 +83,7 @@
 
         window.VWO = window.VWO || [];
         window.VWO.push(['nls.mapElements', nativeToCustom]);
-    </script>
+    </script> -->
 </body>
 
 </html>
